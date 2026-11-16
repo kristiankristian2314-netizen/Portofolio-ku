@@ -1,0 +1,478 @@
+/* ==================== PERTEMUAN 4: FINAL - LIGHT TECH THEME ==================== */
+
+/* ==================== GENERAL STYLES ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, monospace; /* Tech/Computer style font stack */
+  background: #f0f2f5; /* Clean light gray-blue background */
+  color: #24292e;      /* Deep slate readable text */
+}
+
+a {
+  color: #0969da;      /* Modern tech blue link color */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #1f6feb;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  color: #1f2328;
+  letter-spacing: 1px;
+}
+
+.short-line {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #1a7f37; /* Terminal Green Accent */
+  margin: 10px 0 20px 0;
+  box-shadow: 0 0 4px rgba(26, 127, 55, 0.2);
+}
+
+.center-line {
+  margin: 10px auto 40px auto;
+}
+
+/* Professional Bright Tech Buttons */
+.btn {
+  display: inline-block;
+  background: #f6f8fa;
+  color: #24292e;
+  border: 1px solid #d0d7de;
+  padding: 12px 36px;
+  font-size: 14px;
+  font-family: inherit;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.08);
+}
+
+.btn:hover {
+  background: #f3f4f6;
+  border-color: #8c959f;
+  color: #0969da;
+}
+
+.btn-white {
+  background: #1f883d; /* Bright Green Accent Button */
+  color: #ffffff;
+  border-color: #1a7f37;
+}
+
+.btn-white:hover {
+  background: #1a7f37;
+  color: #ffffff;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.label {
+  display: inline-block;
+  background: #ffffff;
+  color: #0969da;
+  border: 1px solid #d0d7de;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.placeholder {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.placeholder img,
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-frame {
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ==================== NAVBAR STYLES ==================== */
+.navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #d0d7de;
+  padding: 15px 10%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2328;
+}
+
+.logo span {
+  color: #1a7f37;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  font-size: 13px;
+}
+
+.nav-links a {
+  color: #57606a;
+}
+
+.nav-links a:hover {
+  color: #0969da;
+}
+
+/* ==================== HOME SECTION STYLES ==================== */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 70px 10%;
+}
+
+.hero h1,
+.hero h2 {
+  font-size: 28px;
+  color: #1f2328;
+}
+
+.hero-desc {
+  font-size: 13px;
+  color: #57606a;
+  margin: 20px 0;
+  max-width: 320px;
+  line-height: 1.6;
+}
+
+.hero-photo {
+  width: 320px;
+  height: 340px;
+  margin-left: auto;
+}
+
+/* ==================== WHAT I DO SECTION STYLES ==================== */
+.services {
+  padding: 60px 10%;
+  background: #ffffff;
+  border-top: 1px solid #d0d7de;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  text-align: center;
+}
+
+.service {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.service-img {
+  height: 160px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.service h3 {
+  font-size: 16px;
+  color: #1f2328;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 12px;
+  color: #57606a;
+  line-height: 1.5;
+}
+
+/* ==================== ABOUT ME SECTION STYLES ==================== */
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  padding: 60px 10%;
+}
+
+.about-photo {
+  width: 320px;
+  height: 340px;
+}
+
+.about-title {
+  font-size: 26px;
+  color: #1f2328;
+}
+
+.about-text p {
+  font-size: 13px;
+  color: #57606a;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.check-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.check-list li {
+  font-size: 13px;
+  color: #24292e;
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 24px;
+}
+
+.check-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #1a7f37;
+}
+
+/* ==================== PORTFOLIO SECTION STYLES ==================== */
+.portfolio {
+  padding: 60px 10%;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  text-align: center;
+}
+
+.project {
+  background: #c7c4c7;
+  border: 1px solid #d0d7de;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.project-img {
+  height: 200px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.project h3 {
+  font-size: 16px;
+  color: #1f2328;
+}
+
+.center-button {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ==================== SKILLS SECTION STYLES ==================== */
+.skills {
+  padding: 40px 0 60px 0;
+  background: #ffffff;
+  border-top: 1px solid #d0d7de;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.skills-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 5%;
+}
+
+.skills-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.skill-card {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 16px 12px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.skill-icon {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.skill-card h3 {
+  font-size: 12px;
+  color: #1f2328;
+  margin-bottom: 6px;
+}
+
+.skill-card p {
+  font-size: 10px;
+  color: #57606a;
+}
+
+.arrow {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  width: 36px;
+  height: 44px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+  color: #57606a;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  background: #ebf0f4;
+  color: #1f2328;
+}
+
+/* ==================== CTA SECTION STYLES ==================== */
+.cta {
+  background: linear-gradient(135deg, #ffffff, #f6f8fa);
+  text-align: center;
+  padding: 50px 10%;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.cta h2 {
+  font-size: 24px;
+  color: #1f2328;
+  margin-bottom: 24px;
+}
+
+.cta .buttons {
+  justify-content: center;
+}
+
+/* ==================== FOOTER STYLES ==================== */
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 50px 10%;
+  background: #ffffff;
+}
+
+.footer-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f2328;
+  margin-bottom: 8px;
+}
+
+.copyright {
+  font-size: 11px;
+  color: #57606a;
+  margin-top: 20px;
+}
+
+.footer-right p {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  color: #24292e;
+  margin-bottom: 14px;
+}
+
+.icon {
+  width: 30px;
+  font-size: 20px;
+  color: #0969da;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+  .navbar,
+  .hero,
+  .services,
+  .about-section,
+  .portfolio,
+  .cta,
+  .footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .navbar-inner {
+    justify-content: center;
+  }
+
+  .hero,
+  .about-section,
+  .services-grid,
+  .portfolio-grid,
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo,
+  .about-photo {
+    margin: 0 auto;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
