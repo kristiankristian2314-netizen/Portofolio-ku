@@ -1,7 +1,24 @@
-/* ==================== PERTEMUAN 4: FINAL - LIGHT TECH THEME ==================== */
+/* ==================== PERTEMUAN 4: ULTIMATE PRO LIGHT TECH THEME ==================== */
+
+/* ==================== CSS VARIABLES ==================== */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-subtle: #f1f5f9;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --border-color: #e2e8f0;
+  --accent-green: #10b981;
+  --accent-green-hover: #059669;
+  --accent-blue: #2563eb;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* ==================== GENERAL STYLES ==================== */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,94 +29,113 @@ html {
 }
 
 body {
-  font-family: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, monospace; /* Tech/Computer style font stack */
-  background: #f0f2f5; /* Clean light gray-blue background */
-  color: #24292e;      /* Deep slate readable text */
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, Monaco, monospace;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
-  color: #0969da;      /* Modern tech blue link color */
+  color: var(--accent-blue);
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: var(--transition);
 }
 
 a:hover {
-  color: #1f6feb;
+  color: #1d4ed8;
 }
 
 .section-title {
   text-align: center;
-  font-size: 28px;
-  color: #1f2328;
-  letter-spacing: 1px;
+  font-size: 32px;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+  font-weight: 800;
 }
 
 .short-line {
   display: block;
   width: 60px;
-  height: 3px;
-  background: #1a7f37; /* Terminal Green Accent */
-  margin: 10px 0 20px 0;
-  box-shadow: 0 0 4px rgba(26, 127, 55, 0.2);
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-green), #34d399);
+  margin: 12px 0 24px 0;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
 
 .center-line {
-  margin: 10px auto 40px auto;
+  margin: 12px auto 48px auto;
 }
 
-/* Professional Bright Tech Buttons */
+/* Buttons */
 .btn {
-  display: inline-block;
-  background: #f6f8fa;
-  color: #24292e;
-  border: 1px solid #d0d7de;
-  padding: 12px 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  padding: 14px 32px;
   font-size: 14px;
   font-family: inherit;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.08);
+  font-weight: 600;
+  border-radius: 10px;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
 }
 
 .btn:hover {
-  background: #f3f4f6;
-  border-color: #8c959f;
-  color: #0969da;
+  background: var(--bg-subtle);
+  border-color: #94a3b8;
+  color: var(--accent-blue);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-white {
-  background: #1f883d; /* Bright Green Accent Button */
+  background: linear-gradient(135deg, #10b981, #059669);
   color: #ffffff;
-  border-color: #1a7f37;
+  border: none;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
 }
 
 .btn-white:hover {
-  background: #1a7f37;
+  background: linear-gradient(135deg, #059669, #047857);
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
 }
 
 .buttons {
   display: flex;
-  gap: 15px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
 .label {
   display: inline-block;
-  background: #ffffff;
-  color: #0969da;
-  border: 1px solid #d0d7de;
-  font-size: 13px;
-  font-weight: bold;
-  padding: 4px 10px;
-  border-radius: 4px;
+  background: #eff6ff;
+  color: var(--accent-blue);
+  border: 1px solid #bfdbfe;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 30px;
 }
 
 .placeholder {
-  background: #ffffff;
-  border: 1px solid #d0d7de;
-  border-radius: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
   overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.placeholder:hover {
+  box-shadow: var(--shadow-lg);
 }
 
 .placeholder img,
@@ -108,25 +144,32 @@ a:hover {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.placeholder:hover img,
+.photo-frame:hover img {
+  transform: scale(1.04);
 }
 
 .photo-frame {
-  border: 1px solid #d0d7de;
-  padding: 8px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  background: var(--bg-card);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg);
 }
 
-/* ==================== NAVBAR STYLES ==================== */
+/* ==================== NAVBAR ==================== */
 .navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #d0d7de;
-  padding: 15px 10%;
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 18px 10%;
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .navbar-inner {
@@ -134,126 +177,160 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #1f2328;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
 }
 
 .logo span {
-  color: #1a7f37;
+  color: var(--accent-green);
 }
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 32px;
   font-size: 13px;
+  font-weight: 600;
 }
 
 .nav-links a {
-  color: #57606a;
+  color: var(--text-muted);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-green);
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #0969da;
+  color: var(--accent-green);
 }
 
-/* ==================== HOME SECTION STYLES ==================== */
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ==================== HERO SECTION ==================== */
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
   align-items: center;
-  padding: 70px 10%;
+  padding: 90px 10%;
 }
 
 .hero h1,
 .hero h2 {
-  font-size: 28px;
-  color: #1f2328;
+  font-size: 36px;
+  color: var(--text-main);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .hero-desc {
-  font-size: 13px;
-  color: #57606a;
-  margin: 20px 0;
-  max-width: 320px;
-  line-height: 1.6;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin: 24px 0;
+  max-width: 440px;
+  line-height: 1.7;
 }
 
 .hero-photo {
-  width: 320px;
-  height: 340px;
+  width: 360px;
+  height: 380px;
   margin-left: auto;
 }
 
-/* ==================== WHAT I DO SECTION STYLES ==================== */
+/* ==================== SERVICES SECTION ==================== */
 .services {
-  padding: 60px 10%;
-  background: #ffffff;
-  border-top: 1px solid #d0d7de;
-  border-bottom: 1px solid #d0d7de;
+  padding: 90px 10%;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   text-align: center;
 }
 
 .service {
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
-  padding: 24px;
-  border-radius: 8px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  padding: 36px 24px;
+  border-radius: 16px;
+  transition: var(--transition);
+}
+
+.service:hover {
+  transform: translateY(-6px);
+  border-color: #cbd5e1;
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-card);
 }
 
 .service-img {
   height: 160px;
-  margin-bottom: 20px;
-  border-radius: 6px;
+  margin-bottom: 24px;
+  border-radius: 10px;
 }
 
 .service h3 {
-  font-size: 16px;
-  color: #1f2328;
-  margin-bottom: 10px;
+  font-size: 18px;
+  color: var(--text-main);
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .service p {
-  font-size: 12px;
-  color: #57606a;
-  line-height: 1.5;
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
-/* ==================== ABOUT ME SECTION STYLES ==================== */
+/* ==================== ABOUT SECTION ==================== */
 .about-section {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
   align-items: center;
-  padding: 60px 10%;
+  padding: 90px 10%;
 }
 
 .about-photo {
-  width: 320px;
-  height: 340px;
+  width: 360px;
+  height: 380px;
 }
 
 .about-title {
-  font-size: 26px;
-  color: #1f2328;
+  font-size: 30px;
+  color: var(--text-main);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
 }
 
 .about-text p {
-  font-size: 13px;
-  color: #57606a;
+  font-size: 14px;
+  color: var(--text-muted);
   margin-bottom: 20px;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .check-list {
@@ -263,173 +340,214 @@ a:hover {
 
 .check-list li {
   font-size: 13px;
-  color: #24292e;
-  margin-bottom: 12px;
+  color: var(--text-main);
+  margin-bottom: 16px;
   position: relative;
-  padding-left: 24px;
+  padding-left: 32px;
+  font-weight: 500;
 }
 
 .check-list li::before {
-  content: "✔";
+  content: "✓";
   position: absolute;
   left: 0;
-  color: #1a7f37;
+  top: -2px;
+  width: 22px;
+  height: 22px;
+  background: #d1fae5;
+  color: var(--accent-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
 }
 
-/* ==================== PORTFOLIO SECTION STYLES ==================== */
+/* ==================== PORTFOLIO SECTION ==================== */
 .portfolio {
-  padding: 60px 10%;
+  padding: 90px 10%;
 }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
   text-align: center;
 }
 
 .project {
-  background: #c7c4c7;
-  border: 1px solid #d0d7de;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.project:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-lg);
 }
 
 .project-img {
-  height: 200px;
-  margin-bottom: 12px;
-  border-radius: 6px;
+  height: 240px;
+  margin-bottom: 16px;
+  border-radius: 10px;
 }
 
 .project h3 {
-  font-size: 16px;
-  color: #1f2328;
+  font-size: 18px;
+  color: var(--text-main);
+  font-weight: 700;
 }
 
 .center-button {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
-/* ==================== SKILLS SECTION STYLES ==================== */
+/* ==================== SKILLS SECTION ==================== */
 .skills {
-  padding: 40px 0 60px 0;
-  background: #ffffff;
-  border-top: 1px solid #d0d7de;
-  border-bottom: 1px solid #d0d7de;
+  padding: 70px 0 90px 0;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .skills-wrapper {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   padding: 0 5%;
 }
 
 .skills-grid {
   flex: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 .skill-card {
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
-  padding: 16px 12px;
-  border-radius: 6px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  padding: 24px 16px;
+  border-radius: 12px;
   text-align: center;
+  transition: var(--transition);
+}
+
+.skill-card:hover {
+  background: var(--bg-card);
+  border-color: var(--accent-green);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.1);
 }
 
 .skill-icon {
   display: block;
-  font-size: 22px;
-  margin-bottom: 8px;
+  font-size: 28px;
+  margin-bottom: 12px;
 }
 
 .skill-card h3 {
-  font-size: 12px;
-  color: #1f2328;
+  font-size: 13px;
+  color: var(--text-main);
   margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .skill-card p {
-  font-size: 10px;
-  color: #57606a;
+  font-size: 11px;
+  color: var(--text-muted);
 }
 
 .arrow {
-  background: #f6f8fa;
-  border: 1px solid #d0d7de;
-  width: 36px;
-  height: 44px;
-  line-height: 40px;
-  text-align: center;
-  font-size: 20px;
-  color: #57606a;
-  border-radius: 6px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  width: 44px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--text-muted);
+  border-radius: 10px;
   cursor: pointer;
+  transition: var(--transition);
 }
 
 .arrow:hover {
-  background: #ebf0f4;
-  color: #1f2328;
+  background: var(--accent-green);
+  color: #ffffff;
+  border-color: var(--accent-green);
 }
 
-/* ==================== CTA SECTION STYLES ==================== */
+/* ==================== CTA SECTION ==================== */
 .cta {
-  background: linear-gradient(135deg, #ffffff, #f6f8fa);
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%, #eff6ff 100%);
   text-align: center;
-  padding: 50px 10%;
-  border-bottom: 1px solid #d0d7de;
+  padding: 80px 10%;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cta h2 {
-  font-size: 24px;
-  color: #1f2328;
-  margin-bottom: 24px;
+  font-size: 30px;
+  color: var(--text-main);
+  margin-bottom: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .cta .buttons {
   justify-content: center;
 }
 
-/* ==================== FOOTER STYLES ==================== */
+/* ==================== FOOTER ==================== */
 .footer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  padding: 50px 10%;
-  background: #ffffff;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  padding: 80px 10%;
+  background: var(--bg-card);
 }
 
 .footer-name {
-  font-size: 20px;
-  font-weight: bold;
-  color: #1f2328;
-  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
 }
 
 .copyright {
-  font-size: 11px;
-  color: #57606a;
-  margin-top: 20px;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 24px;
 }
 
 .footer-right p {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 13px;
-  color: #24292e;
-  margin-bottom: 14px;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--text-main);
+  margin-bottom: 16px;
+  font-weight: 500;
 }
 
 .icon {
-  width: 30px;
-  font-size: 20px;
-  color: #0969da;
+  width: 36px;
+  height: 36px;
+  background: #eff6ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--accent-blue);
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
@@ -441,8 +559,8 @@ a:hover {
   .portfolio,
   .cta,
   .footer {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 6%;
+    padding-right: 6%;
   }
 
   .navbar-inner {
@@ -455,15 +573,18 @@ a:hover {
   .portfolio-grid,
   .footer {
     grid-template-columns: 1fr;
+    gap: 40px;
   }
 
   .hero-photo,
   .about-photo {
     margin: 0 auto;
+    width: 300px;
+    height: 320px;
   }
 
   .skills-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .arrow {
@@ -474,5 +595,9 @@ a:hover {
 @media (max-width: 480px) {
   .skills-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .hero h1, .hero h2 {
+    font-size: 28px;
   }
 }
